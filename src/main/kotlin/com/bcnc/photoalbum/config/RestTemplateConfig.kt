@@ -1,4 +1,4 @@
-package com.bcnc.photoalbum.infrastructure.config
+package com.bcnc.photoalbum.config
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

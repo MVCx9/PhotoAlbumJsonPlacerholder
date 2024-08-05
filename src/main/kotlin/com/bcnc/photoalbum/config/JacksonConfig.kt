@@ -1,4 +1,4 @@
-package com.bcnc.photoalbum.infrastructure.config
+package com.bcnc.photoalbum.config
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule

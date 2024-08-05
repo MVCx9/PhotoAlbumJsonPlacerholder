@@ -1,7 +1,7 @@
-package com.bcnc.photoalbum.controller
+package com.bcnc.photoalbum.adapter
 
-import com.bcnc.photoalbum.entity.Album
-import com.bcnc.photoalbum.entity.Photo
+import com.bcnc.photoalbum.domain.entity.Album
+import com.bcnc.photoalbum.domain.entity.Photo
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

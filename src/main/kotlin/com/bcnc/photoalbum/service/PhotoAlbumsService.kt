@@ -1,18 +1,18 @@
 package com.bcnc.photoalbum.service
 
-import com.bcnc.photoalbum.entity.Album
-import com.bcnc.photoalbum.entity.Photo
-import com.bcnc.photoalbum.repository.PhotoAlbumsRepository
+import com.bcnc.photoalbum.domain.entity.Album
+import com.bcnc.photoalbum.domain.entity.Photo
+import com.bcnc.photoalbum.domain.repository.PhotoAlbumsRepository
 import org.springframework.stereotype.Service
 
 @Service
-class PhotoAlbumsService(private val photoalbumsRepository: PhotoAlbumsRepository) {
+class PhotoAlbumsService(private val photoAlbumsRepository: PhotoAlbumsRepository) {
 
     fun getAlbums(): List<Album> {
-        return photoalbumsRepository.findAllAlbums()
+        return photoAlbumsRepository.findAllAlbums()
     }
 
     fun getPhotosFromAlbum(albumId: Int): List<Photo> {
-        return photoalbumsRepository.findPhotosByAlbumid(albumId.toLong())
+        return photoAlbumsRepository.findPhotosByAlbumId(albumId.toLong())
     }
 }

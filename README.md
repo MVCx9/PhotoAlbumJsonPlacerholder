@@ -9,6 +9,16 @@ It will help you to enhance your skills in Kotlin and Spring Boot by providing a
 - **Kotlin:** A modern and safe programming language for application development.
 - **Spring Boot:** A framework that simplifies enterprise application development.
 - **Maven:** A project management and build tool.
+
+## Project Architecture
+The application follows the hexagonal architecture pattern (ports and adapters) to ensure a modular and maintainable structure. The main components are:
+
+- Controllers: Handle HTTP requests and delegate business logic to the service.
+- Services: Contain the application's business logic.
+- Clients: Make calls to external services such as JSONPlaceholder.
+- Configuration: Manages the configuration of application components like RestTemplate and ObjectMapper.
+- Entity: Define the data models used in the application.
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
@@ -23,9 +33,10 @@ Before you begin, ensure you have met the following requirements:
 
 ```sh
 git clone https://github.com/your-username/photoalbums.git
+```
+```sh
 cd photoalbums
 ```
-
 ### Build the Project
 
 To build the project, run the following command:
@@ -56,16 +67,8 @@ To run the tests, use the following command:
 ./mvnw test
 ```
 
-## Project Architecture
-The application follows the hexagonal architecture pattern (ports and adapters) to ensure a modular and maintainable structure. The main components are:
-
-- Controllers: Handle HTTP requests and delegate business logic to the service.
-- Services: Contain the application's business logic.
-- Clients: Make calls to external services such as JSONPlaceholder.
-- Configuration: Manages the configuration of application components like RestTemplate and ObjectMapper.
-
 ## Contributions
-Contributions are welcome. Please follow the guidelines established in the CONTRIBUTING.md file.
+Contributions are welcome. Please follow the guidelines established in the [CONTRIBUTING](CONTRIBUTING.md) file.
 
 ## Documentation and Resources
 
