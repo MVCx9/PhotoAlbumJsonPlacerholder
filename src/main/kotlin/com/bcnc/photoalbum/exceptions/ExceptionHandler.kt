@@ -1,9 +1,10 @@
 package com.bcnc.photoalbum.exceptions
 
 import org.springframework.http.HttpStatus
-import org.springframework.http.ResponseEntity
+import org.springframework.web.ErrorResponse
 import org.springframework.web.bind.annotation.ControllerAdvice
 import org.springframework.web.bind.annotation.ExceptionHandler
+import org.springframework.web.bind.annotation.ResponseStatus
 
 // General API Exception
 open class ApiException(message: String) : RuntimeException(message)
@@ -18,18 +19,21 @@ class ApiCallException(message: String) : ApiException(message)
 class GlobalExceptionHandler {
 
     @ExceptionHandler(ApiException::class)
-    fun handleApiException(ex: ApiException): ResponseEntity<String> {
-        return ResponseEntity(ex.message, HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    fun handleApiException(ex: ApiException): ErrorResponse {
+        return ErrorResponse.create(ex, HttpStatus.INTERNAL_SERVER_ERROR, ex.message.toString())
     }
 
     @ExceptionHandler(ResourceNotFoundException::class)
-    fun handleResourceNotFoundException(ex: ResourceNotFoundException): ResponseEntity<String> {
-        return ResponseEntity(ex.message, HttpStatus.NOT_FOUND)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    fun handleResourceNotFoundException(ex: ResourceNotFoundException): ErrorResponse {
+        return ErrorResponse.create(ex, HttpStatus.NOT_FOUND, ex.message.toString())
     }
 
     @ExceptionHandler(ApiCallException::class)
-    fun handleApiCallException(ex: ApiCallException): ResponseEntity<String> {
-        return ResponseEntity(ex.message, HttpStatus.INTERNAL_SERVER_ERROR)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    fun handleApiCallException(ex: ApiCallException): ErrorResponse {
+        return ErrorResponse.create(ex, HttpStatus.INTERNAL_SERVER_ERROR, ex.message.toString())
     }
 
 }

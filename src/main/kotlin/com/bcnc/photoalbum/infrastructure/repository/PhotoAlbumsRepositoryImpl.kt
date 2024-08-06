@@ -3,7 +3,7 @@ package com.bcnc.photoalbum.infrastructure.repository
 import com.bcnc.photoalbum.adapter.output.client.JsonPlaceholderClient
 import com.bcnc.photoalbum.domain.entity.Album
 import com.bcnc.photoalbum.domain.entity.Photo
-import com.bcnc.photoalbum.domain.repository.PhotoAlbumsRepository
+import com.bcnc.photoalbum.repository.PhotoAlbumsRepository
 import org.springframework.stereotype.Repository
 
 @Repository

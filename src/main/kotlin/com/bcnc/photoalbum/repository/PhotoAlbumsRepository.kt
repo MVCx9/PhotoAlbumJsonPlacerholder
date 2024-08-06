@@ -1,4 +1,4 @@
-package com.bcnc.photoalbum.domain.repository
+package com.bcnc.photoalbum.repository
 
 import com.bcnc.photoalbum.domain.entity.Album
 import com.bcnc.photoalbum.domain.entity.Photo

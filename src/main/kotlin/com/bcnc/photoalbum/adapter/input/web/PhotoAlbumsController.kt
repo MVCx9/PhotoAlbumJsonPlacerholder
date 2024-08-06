@@ -1,3 +1,4 @@
+
 package com.bcnc.photoalbum.adapter.input.web
 
 import com.bcnc.photoalbum.domain.entity.Album
@@ -21,6 +22,6 @@ class PhotoAlbumsController(private val photoAlbumsService: PhotoAlbumsService) 
     @GetMapping("/albums/{albumId}/photos")
     @ResponseStatus(value = HttpStatus.OK)
     fun getPhotosByAlbumId(@PathVariable albumId: Long): List<Photo> {
-        return photoAlbumsService.getPhotosFromAlbum(albumId.toInt())
+        return photoAlbumsService.getPhotosFromAlbum(albumId)
     }
 }
