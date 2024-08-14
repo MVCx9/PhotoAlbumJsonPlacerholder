@@ -42,7 +42,7 @@ cd photoalbums
 To build the project, run the following command:
 
 ```sh
-./mvn clean install
+./mvnw clean install
 ```
 
 ### Run the Application
@@ -50,7 +50,7 @@ To build the project, run the following command:
 To run the application, use the following command:
 
 ```sh
-./mvn spring-boot:run
+./mvnw spring-boot:run
 ```
 
 The application will start on `http://localhost:8080`.
@@ -60,7 +60,7 @@ The application will start on `http://localhost:8080`.
 To run the tests, use the following command:
 
 ```sh
-./mvn test
+./mvnw test
 ```
 
 ## Accessing Swagger UI Documentation
