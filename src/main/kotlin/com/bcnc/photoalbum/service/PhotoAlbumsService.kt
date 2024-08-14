@@ -27,7 +27,7 @@ class PhotoAlbumsService(private val photoAlbumsRepository: PhotoAlbumsRepositor
         return try {
             photoAlbumsRepository.findPhotosByAlbumId(albumId).also {
                 if(it.isEmpty())
-                    throw ResourceNotFoundException("Photos not found at Album $albumId")
+                    throw ResourceNotFoundException("Photos not found in Album $albumId")
             }
 
         } catch (e: HttpClientErrorException) {

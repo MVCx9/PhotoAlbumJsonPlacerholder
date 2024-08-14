@@ -1,0 +1,39 @@
+components:
+  schemas:
+    ErrorResponse:
+      description: Representation of an error response.
+      allOf:
+        - type: object
+          properties:
+            className:
+              type: string
+              description: The canonical name of the exception class.
+            type:
+              type: string
+              description: The type of error (e.g., "Resource Not Found", "API Exception").
+            status:
+              type: integer
+              description: HTTP status code.
+            message:
+              type: string
+              description: Detailed message about the error.
+          example:
+            className: com.bcnc.photoalbum.exceptions.ResourceNotFoundException
+            type: "Resource Not Found"
+            status: 404
+            message: "Photos not found in Album 999"
+
+  responses:
+    NotFoundError:
+      description: The attempted resource does not exist or could not be found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    InternalServerError:
+      description: Unexpected error occurred at one of the layers of the application (e.g., controller, service, repository).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+

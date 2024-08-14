@@ -1,0 +1,98 @@
+openapi: 3.0.1
+info:
+  title: Photo Album API
+  description: API for managing photo albums and photos
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /albums:
+    get:
+      summary: Get all albums
+      description: Retrieve a list of all photo albums
+      responses:
+        '200':
+          description: A list of albums
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Album'
+        '404':
+          description: The endpoint does not exist or the attempted resource does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: '../resources/static/exceptions.yml#/components/responses/NotFoundError'
+        '500':
+          description: Unexpected error occurred at one of the layers of the microservice, controller, business service, repository etc.
+          content:
+            application/json:
+              schema:
+                $ref: '../resources/static/exceptions.yml#/components/responses/InternalServerError'
+
+  /albums/{albumId}/photos:
+    get:
+      summary: Get photos by album ID
+      description: Retrieve a list of photos for a specific album by album ID
+      parameters:
+        - name: albumId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A list of photos for the specified album
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Photo'
+        '404':
+          description: The endpoint does not exist or the attempted resource does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: '../resources/static/exceptions.yml#/components/responses/NotFoundError'
+        '500':
+          description: Unexpected error occurred at one of the layers of the microservice, controller, business service, repository etc.
+          content:
+            application/json:
+              schema:
+                $ref: '../resources/static/exceptions.yml#/components/responses/InternalServerError'
+
+components:
+  schemas:
+    Album:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        userId:
+          type: integer
+          example: 1
+        title:
+          type: string
+          example: Holiday Album
+    Photo:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        albumId:
+          type: integer
+          example: 1
+        title:
+          type: string
+          example: Beach
+        url:
+          type: string
+          example: http://example.com/photo.jpg
+        thumbnailUrl:
+          type: string
+          example: http://example.com/photo_thumbnail.jpg

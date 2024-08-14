@@ -42,7 +42,7 @@ cd photoalbums
 To build the project, run the following command:
 
 ```sh
-./mvnw clean install
+./mvn clean install
 ```
 
 ### Run the Application
@@ -50,25 +50,51 @@ To build the project, run the following command:
 To run the application, use the following command:
 
 ```sh
-./mvnw spring-boot:run
+./mvn spring-boot:run
 ```
 
 The application will start on `http://localhost:8080`.
-
-## Endpoints
-- **_GET /albums:_** Returns a list of all albums.
-- **_GET /albums/{albumId}/photos:_** Returns a list of photos for the specified album by albumId.
 
 ## Running Tests
 
 To run the tests, use the following command:
 
 ```sh
-./mvnw test
+./mvn test
 ```
 
-## Contributions
-Contributions are welcome. Please follow the guidelines established in the [CONTRIBUTING](CONTRIBUTING.md) file.
+## Accessing Swagger UI Documentation
+
+This application provides interactive API documentation using [Swagger UI](https://swagger.io/tools/swagger-ui/). Swagger UI allows you to explore and test the available endpoints in your API directly from the browser.
+
+### How to Access
+
+1. **Start the Application**: Make sure the application is running. 
+   
+2. **Open Swagger UI**: Once the application is running, open your browser and navigate to:
+ http://localhost:8080/swagger-ui/index.html
+
+Here, you'll find the full API documentation with the available endpoints, request parameters, and response types.
+
+### Testing Endpoints via Swagger UI
+
+1. **Select an Endpoint**: On the Swagger UI page, you'll see a list of endpoints grouped by their controllers or features. Click on an endpoint to expand its details.
+
+2. **Input Parameters**: For endpoints that require parameters (like path variables, query parameters, or request bodies), Swagger UI will present you with input fields to fill in the required data.
+
+3. **Execute the Request**: After filling in the necessary details, click the **"Try it out"** button followed by **"Execute"**. Swagger UI will send the request to the server and display the response, including status code, headers, and the response body.
+
+4. **Review Responses**: The response section will show the result of your request, which helps in verifying the behavior and output of each endpoint.
+
+### Viewing the OpenAPI Specification
+
+If you need to see the raw OpenAPI specification (in YAML format), it can be accessed via: 
+http://localhost:8080/v3/api-docs.yaml
+
+or
+
+If you need to see the raw OpenAPI specification (in JSON format), it can be accessed via: 
+http://localhost:8080/v3/api-docs
 
 ## Documentation and Resources
 
@@ -91,4 +117,4 @@ Here are some useful links to documentation and resources to help you better und
 - [Spring Framework Guides](https://spring.io/guides)
 
 ## License
-This project is licensed under the MIT License. For more details, see the [LICENSE](LICENSE.md) file.
+This project is licensed under the MIT License.
