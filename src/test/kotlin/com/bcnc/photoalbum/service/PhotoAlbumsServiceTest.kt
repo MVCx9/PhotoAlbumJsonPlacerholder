@@ -1,11 +1,12 @@
 package com.bcnc.photoalbum.service
 
 
+import com.bcnc.photoalbum.application.service.PhotoAlbumsService
 import com.bcnc.photoalbum.domain.entity.Album
 import com.bcnc.photoalbum.domain.entity.Photo
-import com.bcnc.photoalbum.exceptions.ApiCallException
-import com.bcnc.photoalbum.exceptions.ResourceNotFoundException
-import com.bcnc.photoalbum.repository.PhotoAlbumsRepository
+import com.bcnc.photoalbum.domain.exceptions.ApiCallException
+import com.bcnc.photoalbum.domain.exceptions.ResourceNotFoundException
+import com.bcnc.photoalbum.domain.repository.PhotoAlbumsRepository
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test

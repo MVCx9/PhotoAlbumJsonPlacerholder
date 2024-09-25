@@ -1,10 +1,10 @@
 package com.bcnc.photoalbum.adapter
 
-import com.bcnc.photoalbum.adapter.input.web.PhotoAlbumsController
+import com.bcnc.photoalbum.infrastructure.input.api.controller.PhotoAlbumsController
 import com.bcnc.photoalbum.domain.entity.Album
 import com.bcnc.photoalbum.domain.entity.Photo
-import com.bcnc.photoalbum.repository.PhotoAlbumsRepository
-import com.bcnc.photoalbum.service.PhotoAlbumsService
+import com.bcnc.photoalbum.domain.repository.PhotoAlbumsRepository
+import com.bcnc.photoalbum.application.service.PhotoAlbumsService
 import io.restassured.RestAssured
 import io.restassured.module.mockmvc.RestAssuredMockMvc
 import org.hamcrest.Matchers.equalTo

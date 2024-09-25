@@ -1,4 +1,4 @@
-package com.bcnc.photoalbum.api
+package com.bcnc.photoalbum.application.input.web
 
 import com.bcnc.photoalbum.domain.entity.Album
 import com.bcnc.photoalbum.domain.entity.Photo

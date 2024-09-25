@@ -1,15 +1,15 @@
-package com.bcnc.photoalbum.service
+package com.bcnc.photoalbum.application.service
 
 import com.bcnc.photoalbum.domain.entity.Album
 import com.bcnc.photoalbum.domain.entity.Photo
-import com.bcnc.photoalbum.exceptions.ApiCallException
-import com.bcnc.photoalbum.exceptions.ResourceNotFoundException
-import com.bcnc.photoalbum.repository.PhotoAlbumsRepository
+import com.bcnc.photoalbum.domain.exceptions.ApiCallException
+import com.bcnc.photoalbum.domain.exceptions.ResourceNotFoundException
+import com.bcnc.photoalbum.domain.repository.PhotoAlbumsRepository
 import org.springframework.stereotype.Service
 import org.springframework.web.client.HttpClientErrorException
 
 @Service
-class PhotoAlbumsService(private val photoAlbumsRepository: PhotoAlbumsRepository) {
+class PhotoAlbumsService (private val photoAlbumsRepository: PhotoAlbumsRepository) {
 
     fun getAlbums(): List<Album> {
         return try {

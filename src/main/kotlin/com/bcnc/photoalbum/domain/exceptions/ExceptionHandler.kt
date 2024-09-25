@@ -1,4 +1,4 @@
-package com.bcnc.photoalbum.exceptions
+package com.bcnc.photoalbum.domain.exceptions
 
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

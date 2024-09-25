@@ -1,4 +1,4 @@
-package com.bcnc.photoalbum.adapter.output.client
+package com.bcnc.photoalbum.application.output.client
 
 import com.bcnc.photoalbum.domain.entity.Album
 import com.bcnc.photoalbum.domain.entity.Photo

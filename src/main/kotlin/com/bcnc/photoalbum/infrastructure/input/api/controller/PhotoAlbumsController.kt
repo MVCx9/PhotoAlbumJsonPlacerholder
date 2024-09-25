@@ -1,15 +1,15 @@
 
-package com.bcnc.photoalbum.adapter.input.web
+package com.bcnc.photoalbum.infrastructure.input.api.controller
 
-import com.bcnc.photoalbum.api.PhotoAlbumsApi
+import com.bcnc.photoalbum.application.input.web.PhotoAlbumsApi
 import com.bcnc.photoalbum.domain.entity.Album
 import com.bcnc.photoalbum.domain.entity.Photo
-import com.bcnc.photoalbum.service.PhotoAlbumsService
+import com.bcnc.photoalbum.application.service.PhotoAlbumsService
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class PhotoAlbumsController(private val photoAlbumsService: PhotoAlbumsService) : PhotoAlbumsApi {
+class PhotoAlbumsController (private val photoAlbumsService: PhotoAlbumsService) : PhotoAlbumsApi {
 
     override fun getAllAlbums(): List<Album> {
         return photoAlbumsService.getAlbums()
